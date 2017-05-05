@@ -1,0 +1,21 @@
+@startuml
+
+class Main
+interface FileIO {
+  + void readFromFile()
+  + void writeToFile()
+  + void setValue()
+  + String getValue()
+}
+
+FileIO <-- Main : uses <
+
+class FileProperties
+
+FileIO <.. FileProperties : implements <
+
+class java.util.Properties
+
+FileProperties --|> java.util.Properties : extends >
+
+@enduml
